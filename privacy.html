@@ -1,302 +1,151 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SideJot · Privacy Policy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for SideJot Chrome / Edge extension">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy — SideJot</title>
   <style>
     :root {
-      --paper: #f5f1e8;
-      --ink: #2a2622;
-      --ink-soft: #6b6359;
-      --accent: #c8553d;
-      --line: rgba(42, 38, 34, 0.12);
+      --bg: #ffffff;
+      --text: #2a2a2a;
+      --text-muted: #6b6b73;
+      --accent: #ef6837;
+      --border: #e3e3e6;
+      --code-bg: #f5f5f7;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      min-height: 100vh;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f23;
+        --text: #d6d6da;
+        --text-muted: #9a9aa0;
+        --accent: #ff8a5c;
+        --border: #38383e;
+        --code-bg: #2a2a30;
+      }
     }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
     body {
-      background-image:
-        radial-gradient(ellipse at top left, rgba(200, 85, 61, 0.05), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(90, 124, 79, 0.04), transparent 50%);
-      padding: 3rem 1.5rem 5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      padding: 40px 20px 80px;
     }
-    .lang-toggle {
-      position: fixed;
-      top: 1.25rem;
-      right: 1.25rem;
-      display: flex;
-      background: #fdfbf5;
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      overflow: hidden;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      box-shadow: 0 2px 8px -2px rgba(42, 38, 34, 0.1);
-      z-index: 10;
-    }
-    .lang-toggle button {
-      background: transparent;
-      border: none;
-      padding: 0.5rem 0.85rem;
-      color: var(--ink-soft);
-      cursor: pointer;
-      font-family: inherit;
-      font-size: inherit;
-      letter-spacing: inherit;
-      text-transform: uppercase;
-      transition: background 0.15s, color 0.15s;
-    }
-    .lang-toggle button:hover { color: var(--ink); }
-    .lang-toggle button.active {
-      background: var(--ink);
-      color: var(--paper);
-    }
-    .lang-toggle button + button { border-left: 1px solid var(--line); }
-    .sheet {
-      background: #fdfbf5;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      padding: 3.5rem 3rem;
-      max-width: 720px;
+    .wrapper {
+      max-width: 760px;
       margin: 0 auto;
-      box-shadow:
-        0 1px 0 rgba(255,255,255,0.8) inset,
-        0 30px 60px -20px rgba(42, 38, 34, 0.18),
-        0 8px 20px -8px rgba(42, 38, 34, 0.12);
-      position: relative;
-    }
-    .sheet::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 24px; right: 24px;
-      height: 6px;
-      background: var(--accent);
-      opacity: 0.85;
-      border-radius: 0 0 2px 2px;
-    }
-    .brand {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.5rem;
     }
     h1 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
+      font-size: 2em;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
     }
-    .updated {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--ink-soft);
-      margin-bottom: 2.5rem;
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.92em;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
     h2 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-top: 2.2rem;
-      margin-bottom: 0.75rem;
-      color: var(--ink);
+      font-size: 1.25em;
+      margin: 32px 0 12px;
+      letter-spacing: -0.005em;
     }
-    p {
-      color: var(--ink);
-      font-size: 1rem;
-      margin-bottom: 0.9rem;
-    }
+    p { margin: 0 0 14px; }
     ul {
-      margin: 0.6rem 0 1rem 1.25rem;
-      color: var(--ink);
+      margin: 0 0 14px;
+      padding-left: 24px;
     }
-    li { margin-bottom: 0.4rem; }
+    li { margin-bottom: 8px; }
     a {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(200, 85, 61, 0.3);
-      transition: border-color 0.2s;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
     }
     a:hover { border-bottom-color: var(--accent); }
-    strong { font-weight: 600; }
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
     .footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px dashed var(--line);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.05em;
-      color: var(--ink-soft);
-      text-align: center;
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9em;
     }
-    .lang-section { display: none; }
-    .lang-section.active { display: block; }
-    @media (max-width: 640px) {
-      .sheet { padding: 2.5rem 1.5rem; }
-      h1 { font-size: 1.9rem; }
-    }
+    strong { font-weight: 600; }
   </style>
 </head>
 <body>
-  <div class="lang-toggle" role="group" aria-label="Language">
-    <button type="button" data-lang="zh">中</button>
-    <button type="button" data-lang="en">EN</button>
+<div class="wrapper">
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: 2026-05-05</p>
+
+  <p>SideJot ("the extension") is a browser side-panel note-taking tool. We take your privacy seriously. This policy explains how the extension collects, uses, and stores your data.</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>The extension only collects the minimum data necessary, and only when you actively use related features:</p>
+  <ul>
+    <li><strong>Email address and password:</strong> Collected only when you voluntarily choose to register or sign in for cloud sync. Passwords are stored using industry-standard one-way hashing in a Supabase-hosted database; we cannot see your plaintext password.</li>
+    <li><strong>Notes you create:</strong> Including titles, content, source URLs, created/modified timestamps, and pinned state. Notes are always saved first to your browser's local IndexedDB.</li>
+    <li><strong>Selected text from web pages:</strong> When you explicitly invoke the right-click "Save to SideJot" context menu, the extension reads only the text content currently selected by you on the active web page. This is captured exclusively at the moment of your click, by injecting a single one-shot function via <code>chrome.scripting</code>. We do NOT read or monitor any other content on the page, do NOT read pages you have not actively selected text on, and do NOT run any persistent content scripts.</li>
+    <li><strong>Source page URL and title:</strong> When you save a selection, the URL and title of the active tab are captured so the note can link back to the original source.</li>
+    <li><strong>Extension preferences:</strong> Such as interface language, panel height, and editor state. These are stored only in your browser's local storage.</li>
+  </ul>
+
+  <p><strong>We do NOT collect:</strong> your browsing history, the content of websites you visit (beyond your active selection), IP addresses, device fingerprints, click behavior, or any other data used for profiling or advertising.</p>
+
+  <h2>2. How Your Data Is Used</h2>
+  <ul>
+    <li><strong>Offline mode:</strong> If you choose "use offline without sign-in", all notes are stored only in your browser locally and are never uploaded to any server.</li>
+    <li><strong>Cloud sync mode:</strong> If you sign in, your notes are uploaded over HTTPS to our Supabase-hosted database for synchronization across your devices. Supabase Row-Level Security (RLS) ensures each user can only access their own data.</li>
+  </ul>
+  <p>We will never use your notes, email, or any other data for advertising, resale to third parties, or any purpose unrelated to the core functionality.</p>
+
+  <h2>3. Where Data Is Stored</h2>
+  <ul>
+    <li><strong>Local data:</strong> Stored in your browser (IndexedDB and <code>chrome.storage.local</code>). Only you can access it.</li>
+    <li><strong>Cloud data (signed-in users only):</strong> Stored with Supabase. See <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</li>
+  </ul>
+
+  <h2>4. Data Sharing</h2>
+  <p>We do not share, sell, or rent your data to any third party. The only third party involved is Supabase, used purely as infrastructure for storing and syncing your notes.</p>
+
+  <h2>5. Your Rights</h2>
+  <ul>
+    <li>You can delete your notes at any time from within the extension.</li>
+    <li>You can export all your notes using the extension's export feature.</li>
+    <li>To delete your cloud sync account and all associated data, email <a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a>. We will process requests within 7 business days.</li>
+    <li>In offline mode, uninstalling the extension removes all local data.</li>
+  </ul>
+
+  <h2>6. Cookies and Tracking</h2>
+  <p>The extension does not use cookies, does not inject tracking scripts, and does not integrate with any analytics platform (such as Google Analytics).</p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>The extension is not directed to children under 13. If we discover that we have inadvertently collected personal information from a child, we will delete it immediately.</p>
+
+  <h2>8. Policy Changes</h2>
+  <p>If this policy changes materially, we will post a notice on the Chrome Web Store listing and on this page, and update the "Last updated" date above. Continued use of the extension after such changes constitutes acceptance of the updated policy.</p>
+
+  <h2>9. Contact</h2>
+  <p>For questions about this policy, contact: <a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a></p>
+
+  <div class="footer">
+    tszxy0305@gmail.com · SideJot
   </div>
 
-  <main class="sheet">
-    <!-- ===== 中文版 ===== -->
-    <section class="lang-section" data-lang-content="zh">
-      <div class="brand">SideJot · 隐私政策</div>
-      <h1>隐私政策</h1>
-      <div class="updated">最后更新：2026-04-07</div>
-
-      <p>SideJot（下称"本扩展"）是一款浏览器侧边栏笔记工具。我们非常重视你的隐私。本隐私政策说明了本扩展收集、使用和存储你的数据的方式。</p>
-
-      <h2>1. 我们收集的信息</h2>
-      <p>本扩展只在你主动使用相关功能时收集最少必要的数据：</p>
-      <ul>
-        <li><strong>邮箱地址和密码</strong>：仅当你主动选择注册/登录云同步账号时收集，用于创建和验证你的账号。密码通过行业标准的单向哈希存储在 Supabase 托管的数据库中，我们无法看到你的明文密码。</li>
-        <li><strong>你创建的笔记内容</strong>：包括标题、正文、源网页 URL、创建/修改时间、置顶状态等。笔记始终首先保存在你浏览器本地的 IndexedDB 中。</li>
-        <li><strong>扩展偏好设置</strong>：例如界面语言、面板高度、编辑器展开状态等，仅存储在你浏览器的本地存储中。</li>
-      </ul>
-      <p><strong>我们不收集：</strong>你的浏览历史、你访问的网站内容、IP 地址、设备指纹、点击行为、或任何其他用于用户画像或广告的数据。</p>
-
-      <h2>2. 数据如何使用</h2>
-      <ul>
-        <li><strong>离线模式</strong>：如果你选择"跳过登录"离线使用，所有笔记仅保存在你本地浏览器中，不会上传到任何服务器。</li>
-        <li><strong>云同步模式</strong>：如果你登录账号，笔记会加密通过 HTTPS 上传至我们托管在 Supabase 的数据库，用于在你的多台设备间同步。我们通过 Supabase 行级安全策略（RLS）保证每个用户只能访问自己的数据。</li>
-        <li>我们绝不会将你的笔记内容、邮箱或任何其他数据用于广告、转售给第三方、或用于任何与核心功能无关的目的。</li>
-      </ul>
-
-      <h2>3. 数据存储位置</h2>
-      <ul>
-        <li><strong>本地数据</strong>：你的浏览器本地（IndexedDB 和 chrome.storage.local），仅你可访问。</li>
-        <li><strong>云端数据</strong>（仅登录用户）：Supabase 提供的数据库服务。Supabase 官网：<a href="https://supabase.com/privacy" target="_blank" rel="noopener">https://supabase.com/privacy</a></li>
-      </ul>
-
-      <h2>4. 数据共享</h2>
-      <p>我们<strong>不会</strong>与任何第三方共享、出售或出租你的数据。唯一接触数据的第三方是作为技术基础设施的 Supabase，仅用于存储和同步你的笔记。</p>
-
-      <h2>5. 你的权利</h2>
-      <ul>
-        <li>你可以随时在扩展中删除你的笔记。</li>
-        <li>你可以使用扩展的导出功能下载全部笔记数据。</li>
-        <li>如需删除你的云同步账号及其全部数据，请发邮件至 <a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a>，我们会在 7 个工作日内处理。</li>
-        <li>离线模式下，直接卸载扩展即可清除所有本地数据。</li>
-      </ul>
-
-      <h2>6. Cookie 与追踪</h2>
-      <p>本扩展不使用 cookie，不植入追踪脚本，不接入任何分析平台（如 Google Analytics）。</p>
-
-      <h2>7. 儿童隐私</h2>
-      <p>本扩展不面向 13 岁以下儿童。如果我们发现无意中收集了儿童的个人信息，会立即删除。</p>
-
-      <h2>8. 政策变更</h2>
-      <p>如本政策发生重大变更，我们会在扩展商店页面和本页面发布通知。持续使用本扩展即表示你接受更新后的政策。</p>
-
-      <h2>9. 联系方式</h2>
-      <p>如果你对本隐私政策有任何疑问，请联系：<a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a></p>
-
-      <div class="footer">tszxy0305@gmail.com · sidejot</div>
-    </section>
-
-    <!-- ===== English ===== -->
-    <section class="lang-section" data-lang-content="en">
-      <div class="brand">SideJot · Privacy Policy</div>
-      <h1>Privacy Policy</h1>
-      <div class="updated">Last updated: 2026-04-07</div>
-
-      <p>SideJot ("the extension") is a browser side-panel note-taking tool. We take your privacy seriously. This policy explains how the extension collects, uses, and stores your data.</p>
-
-      <h2>1. Information We Collect</h2>
-      <p>The extension only collects the minimum data necessary, and only when you actively use related features:</p>
-      <ul>
-        <li><strong>Email address and password</strong>: Collected only when you voluntarily choose to register or sign in for cloud sync. Passwords are stored using industry-standard one-way hashing in a Supabase-hosted database; we cannot see your plaintext password.</li>
-        <li><strong>Notes you create</strong>: Including titles, content, source URLs, created/modified timestamps, and pinned state. Notes are always saved first to your browser's local IndexedDB.</li>
-        <li><strong>Extension preferences</strong>: Such as interface language, panel height, and editor state. These are stored only in your browser's local storage.</li>
-      </ul>
-      <p><strong>We do NOT collect:</strong> your browsing history, the content of websites you visit, IP addresses, device fingerprints, click behavior, or any other data used for profiling or advertising.</p>
-
-      <h2>2. How Your Data Is Used</h2>
-      <ul>
-        <li><strong>Offline mode</strong>: If you choose "use offline without sign-in", all notes are stored only in your browser locally and are never uploaded to any server.</li>
-        <li><strong>Cloud sync mode</strong>: If you sign in, your notes are uploaded over HTTPS to our Supabase-hosted database for synchronization across your devices. Supabase Row-Level Security (RLS) ensures each user can only access their own data.</li>
-        <li>We will never use your notes, email, or any other data for advertising, resale to third parties, or any purpose unrelated to the core functionality.</li>
-      </ul>
-
-      <h2>3. Where Data Is Stored</h2>
-      <ul>
-        <li><strong>Local data</strong>: Stored in your browser (IndexedDB and chrome.storage.local). Only you can access it.</li>
-        <li><strong>Cloud data</strong> (signed-in users only): Stored with Supabase. See <a href="https://supabase.com/privacy" target="_blank" rel="noopener">https://supabase.com/privacy</a></li>
-      </ul>
-
-      <h2>4. Data Sharing</h2>
-      <p>We do <strong>not</strong> share, sell, or rent your data to any third party. The only third party involved is Supabase, used purely as infrastructure for storing and syncing your notes.</p>
-
-      <h2>5. Your Rights</h2>
-      <ul>
-        <li>You can delete your notes at any time from within the extension.</li>
-        <li>You can export all your notes using the extension's export feature.</li>
-        <li>To delete your cloud sync account and all associated data, email <a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a>. We will process requests within 7 business days.</li>
-        <li>In offline mode, uninstalling the extension removes all local data.</li>
-      </ul>
-
-      <h2>6. Cookies and Tracking</h2>
-      <p>The extension does not use cookies, does not inject tracking scripts, and does not integrate with any analytics platform (such as Google Analytics).</p>
-
-      <h2>7. Children's Privacy</h2>
-      <p>The extension is not directed to children under 13. If we discover that we have inadvertently collected personal information from a child, we will delete it immediately.</p>
-
-      <h2>8. Policy Changes</h2>
-      <p>If this policy changes materially, we will post a notice on the Chrome Web Store listing and on this page. Continued use of the extension constitutes acceptance of the updated policy.</p>
-
-      <h2>9. Contact</h2>
-      <p>For questions about this policy, contact: <a href="mailto:tszxy0305@gmail.com">tszxy0305@gmail.com</a></p>
-
-      <div class="footer">tszxy0305@gmail.com · sidejot</div>
-    </section>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'sidejot_privacy_lang';
-    function detectLang() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved === 'zh' || saved === 'en') return saved;
-      } catch (e) {}
-      const nav = (navigator.language || 'en').toLowerCase();
-      return nav.startsWith('zh') ? 'zh' : 'en';
-    }
-    function applyLang(lang) {
-      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      document.title = lang === 'zh' ? 'SideJot · 隐私政策' : 'SideJot · Privacy Policy';
-      document.querySelectorAll('[data-lang-content]').forEach((el) => {
-        el.classList.toggle('active', el.dataset.langContent === lang);
-      });
-      document.querySelectorAll('.lang-toggle button').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-    }
-    document.querySelectorAll('.lang-toggle button').forEach((btn) => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-    });
-    applyLang(detectLang());
-  </script>
+</div>
 </body>
 </html>
